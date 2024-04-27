@@ -3,10 +3,10 @@ import {
   Alert,
   Box,
   Button,
-  Dialog,
   IconButton,
   Link,
   MenuItem,
+  Modal,
   Select,
   Typography,
 } from "@mui/material";
@@ -100,7 +100,7 @@ export const CreateEmployee: React.FC = () => {
     <div className="flex flex-col justify-center items-center font-serif">
       <div className="flex flex-col gap-3 items-center w-full">
         <div className="flex flex-col gap-2 items-center">
-          <span className="text-3xl font-bold">HRnet</span>
+          <span className="text-xl font-bold">HRnet</span>
           <Link href="list">View Current Employees</Link>
           <span className="text-xl font-bold">Create Employee</span>
         </div>
@@ -179,26 +179,24 @@ export const CreateEmployee: React.FC = () => {
             </Button>
           </div>
         </form>
-        <div>
-          <Dialog open={open}>
-            <Alert
-              action={
-                <IconButton
-                  aria-label="close"
-                  color="inherit"
-                  size="small"
-                  onClick={() => {
-                    setOpen(false);
-                  }}
-                >
-                  <Close fontSize="inherit" />
-                </IconButton>
-              }
-            >
-              Employee Created !
-            </Alert>
-          </Dialog>
-        </div>
+        <Modal open={open}>
+          <Alert
+            action={
+              <IconButton
+                aria-label="close"
+                color="inherit"
+                size="small"
+                onClick={() => {
+                  setOpen(false);
+                }}
+              >
+                <Close fontSize="inherit" />
+              </IconButton>
+            }
+          >
+            Employee Created !
+          </Alert>
+        </Modal>
       </div>
     </div>
   );

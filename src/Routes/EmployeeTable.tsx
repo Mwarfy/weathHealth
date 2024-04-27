@@ -22,8 +22,8 @@ const EmployeeTable: React.FC = () => {
   return (
     <div className="flex flex-col gap-1 items-center">
       <span className="text-3xl font-bold text-center p-4">Employees</span>
-      <div style={{ maxHeight: "58%", width: 900 }}>
-        <DataGrid rows={rows} columns={columns} rowCount={employees.length} />
+      <div className="h-[800px] w-[900px]">
+        <DataGrid rows={rows} columns={columns} />
       </div>
       <Link href="/">Home</Link>
     </div>

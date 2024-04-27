@@ -17,10 +17,7 @@ export const MENUS: IMenuRoute[] = [
 export const App: React.FC = () => {
   return (
     <BrowserRouter>
-      <div
-        className="fixed inset-0 flex flex-col overflow-hidden bg-slate-100 font-sans dark:bg-slate-800 dark:text-white"
-        data-testid="app"
-      >
+      <div className="fixed inset-0 flex flex-col font-sans" data-testid="app">
         <Routes>
           {MENUS.map(({ value, route }, i) => (
             <Route path={value} key={i} element={route} />
